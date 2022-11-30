@@ -95,21 +95,25 @@ var renderStartPage = function () {
       
 //Check if game-over is true, or if there is time left. Start time at 30. 
 var setTime = function () {
-    timeleft = 30;
-    var timercheck = setInterval(function () {
+        timeleft = 30;
+
+    var timercheck = setInterval(function() {
         timerEl.innerText = timeleft;
         timeleft--
+
         if (gameover) {
             clearInterval(timercheck)
         }
+       
         if (timeleft < 0) {
             showScore()
             timerEl.innerText = 0
             clearInterval(timercheck)
         }
-    }, 1000)
-}
-            
+
+        }, 1000)
+    }
+     
 var startGame = function () {   
     containerStartEl.classList.add('hide');
     containerStartEl.classList.remove('show');
